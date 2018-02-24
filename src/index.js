@@ -75,18 +75,6 @@ const ReplyBtn = () => (
   <i className="fa fa-reply reply-button"/>
 );
 
-function getRetweetCount(count) {
-    if (count > 0) {
-      return (
-        <span className="retweet-count">
-          {count}
-        </span>
-      );
-    } else {
-      return null;
-    }
-}
-
 function Count({ count }) {
     if (count > 0) {
       return (
@@ -103,18 +91,15 @@ const RetweetBtn = ({ count }) => (
   <span className="retweet-button">
     <i className="fa fa-retweet"/>
     <Count count={count} />
-    { /* getRetweetCount(count) */}
   </span>
 );
 
 const LikeBtn = ( { count }) => (
   <span className="like-button">
     <i className="fa fa-heart"/>
-    { count > 0 &&
       <span className="like-count">
-        {count}
+        {count ? count : null}
       </span>
-    }
   </span>
 );
 
