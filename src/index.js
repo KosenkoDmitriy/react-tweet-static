@@ -55,10 +55,11 @@ function Message({ text }) {
 }
 
 function NameWithNick({ author }) {
+  const {name, nick} = author;
   return (
     <span className="name-with-nick">
-      <span className="name">{author.name}</span>
-      <span className="nick">@{author.nick}</span>
+      <span className="name">{name}</span>
+      <span className="nick">@{nick}</span>
     </span>
   );
 }
