@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Tweet() {
+function Tweet({ tweet }) {
   return (
     <div className="tweet">
-      <Avatar/>
+      <Avatar hash={tweet.gravatar}/>
       <div className="content">
         <NameWithNick/>
         <Time/>
-        <Message/>
+        <Message text={tweet.msg}/>
         <div className="buttons">
           <ReplyBtn/>
           <RetweetBtn/>
@@ -21,20 +21,33 @@ function Tweet() {
   );
 }
 
-function Avatar() {
+var testTweet = {
+    msg: "Message ... ",
+    gravatar: "qwer", // https://daveceddia.com/gravatar 
+    author: {
+      nick: "bondPerson",
+      name: "Bond"
+    },
+    likes: 555,
+    retweets: 1000001,
+    timestamp: "2018-02-24 21:21:21"
+}
+
+function Avatar({ hash }) {
+  var url = `https://www.gravatar.com/avatar/${hash}`;
   return (
     <img
-      src="https://www.gravatar.com/avatar/nothing"
+      src={url}
       className="avatar"
       alt="avatar"
     />
   );
 }
 
-function Message() {
+function Message({ text }) {
   return (
     <div className="message">
-      Message is less than 150 characters.
+      {text}
     </div>
   );
 }
@@ -69,6 +82,6 @@ const MoreOptionsBtn = () => (
 );
 
 ReactDOM.render(
-  <Tweet/>,
+  <Tweet tweet={testTweet}/>,
   document.querySelector('#root')
 );
