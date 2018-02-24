@@ -41,6 +41,22 @@ function NameWithNick() {
   );
 }
 
+const Time = () => (
+  <span className="time">5h ago</span>
+);
+
+const ReplyBtn = () => (
+  <i className="fa fa-reply reply-button"/>
+);
+
+const RetweetBtn = () => (
+  <i className="fa fa-retweet retweet-button"/>
+);
+
+const LikeBtn = () => (
+  <i className="fa fa-heart like-button"
+);
+
 ReactDOM.render(
   <Tweet/>,
   document.querySelector('#root')
