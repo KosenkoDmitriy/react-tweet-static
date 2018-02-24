@@ -8,7 +8,14 @@ function Tweet() {
       <Avatar/>
       <div className="content">
         <NameWithNick/>
+        <Time/>
         <Message/>
+        <div className="buttons">
+          <ReplyBtn/>
+          <RetweetBtn/>
+          <LikeBtn/>
+          <MoreOptionsBtn/>
+        </div>
       </div>
     </div>
   );
@@ -54,7 +61,11 @@ const RetweetBtn = () => (
 );
 
 const LikeBtn = () => (
-  <i className="fa fa-heart like-button"
+  <i className="fa fa-heart like-button"/>
+);
+
+const MoreOptionsBtn = () => (
+  <i className="fa fa-ellipsis-h more-button"/>
 );
 
 ReactDOM.render(
