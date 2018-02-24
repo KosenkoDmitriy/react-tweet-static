@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import moment from 'moment'; // yarn add moment
+
 
 function Tweet({ tweet }) {
   return (
     <div className="tweet">
       <Avatar hash={tweet.gravatar}/>
       <div className="content">
-        <NameWithNick/>
-        <Time/>
+        <NameWithNick author={tweet.author}/>
+        <Time dateTime={tweet.timestamp}/>
         <Message text={tweet.msg}/>
         <div className="buttons">
           <ReplyBtn/>
@@ -23,7 +25,7 @@ function Tweet({ tweet }) {
 
 var testTweet = {
     msg: "Message ... ",
-    gravatar: "qwer", // https://daveceddia.com/gravatar 
+    gravatar: "qwer", // https://daveceddia.com/gravatar
     author: {
       nick: "bondPerson",
       name: "Bond"
@@ -52,18 +54,21 @@ function Message({ text }) {
   );
 }
 
-function NameWithNick() {
+function NameWithNick({ author }) {
   return (
     <span className="name-with-nick">
-      <span className="name">Dmitry</span>
-      <span className="nick">@nick</span>
+      <span className="name">{author.name}</span>
+      <span className="nick">@{author.nick}</span>
     </span>
   );
 }
 
-const Time = () => (
-  <span className="time">5h ago</span>
-);
+const Time = ({ dateTime }) => {
+  const timeString = moment(dateTime).fromNow();
+  return (
+    <span className="time"> {timeString} </span>
+  );
+}
 
 const ReplyBtn = () => (
   <i className="fa fa-reply reply-button"/>
