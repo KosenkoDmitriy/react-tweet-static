@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import moment from 'moment'; // yarn add moment
-
+import PropTypes from 'prop-types';
 
 function Tweet({ tweet }) {
   return (
@@ -63,6 +63,12 @@ function NameWithNick({ author }) {
     </span>
   );
 }
+NameWithNick.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    nick: PropTypes.string.isRequired
+  }).isRequired
+};
 
 const Time = ({ dateTime }) => {
   const timeString = moment(dateTime).fromNow();
@@ -70,6 +76,7 @@ const Time = ({ dateTime }) => {
     <span className="time"> {timeString} </span>
   );
 }
+Time.propTypes = { dateTime: PropTypes.string };
 
 const ReplyBtn = () => (
   <i className="fa fa-reply reply-button"/>
@@ -93,6 +100,10 @@ const RetweetBtn = ({ count }) => (
     <Count count={count} />
   </span>
 );
+RetweetBtn.propTypes = {
+  count: PropTypes.number
+};
+
 
 const LikeBtn = ( { count }) => (
   <span className="like-button">
@@ -102,6 +113,10 @@ const LikeBtn = ( { count }) => (
       </span>
   </span>
 );
+
+LikeBtn.propTypes = {
+  count: PropTypes.number
+};
 
 const MoreOptionsBtn = () => (
   <i className="fa fa-ellipsis-h more-button"/>
