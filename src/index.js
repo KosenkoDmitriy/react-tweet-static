@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import { AddressLabel, testPerson}  from './AddressLabel.js';
 import { Envelope, personFrom, personTo } from './Envelope.js';
 import IconButton from './IconButton';
+import { NavMenu } from './Nav';
+
 
 function Tweet({ tweet }) {
   return (
@@ -127,7 +129,7 @@ const MoreOptionsBtn = () => (
 );
 
 ReactDOM.render(
-  <div>
+  /*<div>
     <Tweet tweet={testTweet}/>
     <h3>Address</h3>
     <AddressLabel person={testPerson}/>
@@ -135,6 +137,7 @@ ReactDOM.render(
     <Envelope addressFrom={personFrom} addressTo={personTo}/>
     <h3>Icon Button</h3>
     <IconButton children=" Love Button"/>
-  </div>,
+  </div>,*/
+  <NavMenu />,
   document.querySelector('#root')
 );
