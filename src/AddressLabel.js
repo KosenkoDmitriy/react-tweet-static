@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-function AddressLabel() {
-  return(
+function AddressLabel({ person }) {
+  return (
     <div className="addressLabel">
-      <p>Full Name</p>
-      <p>123 Fake St.</p>
-      <p>Boston, MA 02118</p>
+      <p>{person.fullName}</p>
+      <p>{person.addressLine1}</p>
+      <p>{person.addressLine2}</p>
     </div>
   );
 }
 
-export default AddressLabel;
+var testPerson = {
+  fullName: "Dmitry K",
+  addressLine1: "555 Born St.",
+  addressLine2: "London, MA 02118"
+}
+
+export { AddressLabel, testPerson };
