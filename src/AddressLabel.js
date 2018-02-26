@@ -1,20 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
 
 function AddressLabel({ person }) {
+  const {fullName, address} = person;
   return (
     <div className="addressLabel">
-      <p>{person.fullName}</p>
-      <p>{person.addressLine1}</p>
-      <p>{person.addressLine2}</p>
+      <p>{fullName}</p>
+      <p>{address.line1}</p>
+      <p>{address.line2}</p>
     </div>
   );
 }
+AddressLabel.propTypes = {
+  person: PropTypes.shape({
+    fullName: PropTypes.string.isRequired,
+    address: PropTypes.shape({
+      line1: PropTypes.string.isRequired,
+      line2: PropTypes.string.isRequired,
+    }).isRequired
+  }).isRequired
+};
 
 var testPerson = {
   fullName: "Dmitry K",
-  addressLine1: "555 Born St.",
-  addressLine2: "London, MA 02118"
+  address: {
+    line1: "555 Born St.",
+    line2: "London, MA 02118"
+  }
 }
+
 
 export { AddressLabel, testPerson };
