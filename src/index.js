@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import moment from 'moment'; // yarn add moment
 import PropTypes from 'prop-types';
+import AddressLabel from './AddressLabel.js';
 
 function Tweet({ tweet }) {
   return (
@@ -123,6 +124,7 @@ const MoreOptionsBtn = () => (
 );
 
 ReactDOM.render(
-  <Tweet tweet={testTweet}/>,
+  // <Tweet tweet={testTweet}/>,
+  <AddressLabel />,
   document.querySelector('#root')
 );

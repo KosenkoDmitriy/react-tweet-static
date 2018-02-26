@@ -66,3 +66,11 @@ body {
   margin-left: 6px;
   font-weight: bold;
 }
+
+/* start AddressLabel component */
+.addressLabel {
+ margin: 0.1em;
+ padding: 1em;
+ line-height: .6em;
+}
+/* end AddressLabel component */
