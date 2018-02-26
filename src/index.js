@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { AddressLabel, testPerson}  from './AddressLabel.js';
 import { Envelope, personFrom, personTo } from './Envelope.js';
-
+import IconButton from './IconButton';
 
 function Tweet({ tweet }) {
   return (
@@ -127,8 +127,14 @@ const MoreOptionsBtn = () => (
 );
 
 ReactDOM.render(
-  // <Tweet tweet={testTweet}/>,
-  // <AddressLabel person={testPerson}/>,
-  <Envelope addressFrom={personFrom} addressTo={personTo}/>,
+  <div>
+    <Tweet tweet={testTweet}/>
+    <h3>Address</h3>
+    <AddressLabel person={testPerson}/>
+    <h3>Envelope</h3>
+    <Envelope addressFrom={personFrom} addressTo={personTo}/>
+    <h3>Icon Button</h3>
+    <IconButton children=" Love Button"/>
+  </div>,
   document.querySelector('#root')
 );
