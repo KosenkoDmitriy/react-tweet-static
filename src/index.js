@@ -129,7 +129,8 @@ const MoreOptionsBtn = () => (
 );
 
 ReactDOM.render(
-  /*<div>
+  <div>
+    <NavMenu />
     <Tweet tweet={testTweet}/>
     <h3>Address</h3>
     <AddressLabel person={testPerson}/>
@@ -137,7 +138,6 @@ ReactDOM.render(
     <Envelope addressFrom={personFrom} addressTo={personTo}/>
     <h3>Icon Button</h3>
     <IconButton children=" Love Button"/>
-  </div>,*/
-  <NavMenu />,
+  </div>,
   document.querySelector('#root')
 );
