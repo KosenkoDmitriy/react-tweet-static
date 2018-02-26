@@ -5,6 +5,7 @@ import moment from 'moment'; // yarn add moment
 import PropTypes from 'prop-types';
 
 import { AddressLabel, testPerson}  from './AddressLabel.js';
+import { Envelope, personFrom, personTo } from './Envelope.js';
 
 
 function Tweet({ tweet }) {
@@ -127,6 +128,7 @@ const MoreOptionsBtn = () => (
 
 ReactDOM.render(
   // <Tweet tweet={testTweet}/>,
-  <AddressLabel person={testPerson}/>,
+  // <AddressLabel person={testPerson}/>,
+  <Envelope addressFrom={personFrom} addressTo={personTo}/>,
   document.querySelector('#root')
 );
