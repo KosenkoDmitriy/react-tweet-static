@@ -31,8 +31,12 @@ class Counter extends React.Component {
   }
 
   resetState = () => {
-    this.setState({actionCount: 0})
-    console.log("reset", this.state.actionCount);
+    // this.setState({actionCount: 0}); // async reset
+    // immediately reset 
+    this.setState({actionCount: 0}, function() {
+      console.log("immediately reset :", this.state.actionCount);
+    });
+    console.log("reset :", this.state.actionCount);
   };
 
   render() {
@@ -40,7 +44,6 @@ class Counter extends React.Component {
       <div>
         <Child onAction={this.handleAction } onReset={ this.resetState } />
         <p>Clicked {this.state.actionCount} times </p>
-
       </div>
     );
   }
