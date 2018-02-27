@@ -39,9 +39,15 @@ class Counter extends React.Component {
 
   resetState = () => {
     // this.setState({actionCount: 0}); // async reset
-    // immediately reset
-    this.setState({actionCount: 0}, function() {
-      console.log("immediately reset :", this.state.actionCount);
+    // // immediately reset
+    // this.setState({actionCount: 0}, function() {
+    //   console.log("immediately reset :", this.state.actionCount);
+    // });
+    // functional setState without side effects
+    this.setState((state, props) => {
+      return {
+        actionCount: 0
+      }
     });
     console.log("reset :", this.state.actionCount);
   };
