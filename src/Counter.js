@@ -1,8 +1,11 @@
 import React from 'react';
 
-function Child({ onAction }) {
+function Child({ onAction, onReset }) {
   return (
-    <button onClick={onAction}> Click me</button>
+    <div>
+      <button onClick={onAction}> Click me</button>
+      <button onClick={onReset}>Reset</button>
+    </div>
   );
 }
 
@@ -35,8 +38,8 @@ class Counter extends React.Component {
   render() {
     return(
       <div>
-        <Child onAction={this.handleAction} />
-        <p>Clicked {this.state.actionCount} times <button onClick={this.resetState}>Reset</button></p>
+        <Child onAction={this.handleAction } onReset={ this.resetState } />
+        <p>Clicked {this.state.actionCount} times </p>
 
       </div>
     );
