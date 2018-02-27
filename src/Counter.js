@@ -6,6 +6,14 @@ function Child({ onAction }) {
   );
 }
 
+const ThreeCounters = () => (
+  <div>
+    <Counter />
+    <Counter />
+    <Counter />
+  </div>
+);
+
 class Counter extends React.Component {
   state = {
     actionCount: 0
@@ -30,4 +38,4 @@ class Counter extends React.Component {
 
 }
 
-export default Counter;
+export { ThreeCounters, Counter };

@@ -8,7 +8,7 @@ import { AddressLabel, testPerson}  from './AddressLabel.js';
 import { Envelope, personFrom, personTo } from './Envelope.js';
 import IconButton from './IconButton';
 import { NavMenu } from './Nav';
-import Counter from './Counter';
+import { ThreeCounters, Counter } from './Counter';
 
 function Tweet({ tweet }) {
   return (
@@ -131,10 +131,10 @@ const MoreOptionsBtn = () => (
 ReactDOM.render(
   <div>
     <NavMenu />
-    <h3>Counter</h3>
-    <Counter />
     <h3>Tweet</h3>
     <Tweet tweet={testTweet}/>
+    <h3>Counter</h3>
+    <ThreeCounters />
     <h3>Address</h3>
     <AddressLabel person={testPerson}/>
     <h3>Envelope</h3>
