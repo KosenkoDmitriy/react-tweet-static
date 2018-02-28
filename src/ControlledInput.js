@@ -1,11 +1,15 @@
 import React from 'react';
 
 class ControlledInput extends React.Component {
-  state = { text: '' };
+  state = {
+    text: 'please typing something interesting'
+  };
 
   handleAction = (event) => {
+    let text = event.target.value;
+    text = text.replace(/[0-9]/g, '');
     this.setState({
-      text: event.target.value
+        text: text
     });
     console.log("", this.state.text);
   };
