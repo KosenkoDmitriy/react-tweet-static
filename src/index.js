@@ -10,7 +10,7 @@ import IconButton from './IconButton';
 import { NavMenu } from './Nav';
 import { ThreeCounters, Counter } from './Counter';
 import { ControlledInput } from './ControlledInput.js';
-
+import LifeCycleTest from './LifeCycleTest';
 
 function Tweet({ tweet }) {
   return (
@@ -135,6 +135,8 @@ ReactDOM.render(
     <NavMenu />
     <h3>Tweet</h3>
     <Tweet tweet={testTweet}/>
+    <h3>Lifecycle test</h3>
+    <LifeCycleTest />
     <h3>Input (controlled)</h3>
     <ControlledInput />
     <h3>Counter</h3>
