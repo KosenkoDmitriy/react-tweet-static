@@ -9,6 +9,8 @@ import { Envelope, personFrom, personTo } from './Envelope.js';
 import IconButton from './IconButton';
 import { NavMenu } from './Nav';
 import { ThreeCounters, Counter } from './Counter';
+import { ControlledInput } from './ControlledInput.js';
+
 
 function Tweet({ tweet }) {
   return (
@@ -133,6 +135,8 @@ ReactDOM.render(
     <NavMenu />
     <h3>Tweet</h3>
     <Tweet tweet={testTweet}/>
+    <h3>Input (controlled)</h3>
+    <ControlledInput />
     <h3>Counter</h3>
     <ThreeCounters />
     <h3>Address</h3>
