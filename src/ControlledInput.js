@@ -21,4 +21,8 @@ class ControlledInput extends React.Component {
   }
 }
 
+const UncontrolledInput = () => (
+  <input type="text" />
+);
+
 export { ControlledInput };
